@@ -43,7 +43,7 @@ namespace JazzMusicians.Controllers
 
         public new ActionResult Profile (int? id)
         {
-            if(id == null)
+            if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -90,12 +90,12 @@ namespace JazzMusicians.Controllers
         
         public ActionResult Edit(int? id)
         {
-            if(id == null)
+            if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Musician musician = _db.Musicians.Find(id);
 
+            Musician musician = _db.Musicians.Find(id);
             if(musician == null)
             {
                 return HttpNotFound();

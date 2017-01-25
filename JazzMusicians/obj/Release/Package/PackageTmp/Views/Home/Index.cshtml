@@ -48,11 +48,16 @@
 
 @foreach (var item in Model) {
     <tr>
+            
         <td class="text-center">
-            <img src="@Url.Content(item.Thumbnail)" height="100" />
+            <a href="@Url.Action("Profile", new { id = item.Id })">
+                <img src="@Url.Content(item.Thumbnail)" height="100" />    
+            </a>  
         </td>
         <td class="text-center">
-            @Html.DisplayFor(modelItem => item.Name)
+            <a href="@Url.Action("Profile", new { id = item.Id })" style="color:antiquewhite">
+                @Html.DisplayFor(modelItem => item.Name)
+            </a>
         </td>
         <td class="text-center">
             @Html.DisplayFor(modelItem => item.Instruments)

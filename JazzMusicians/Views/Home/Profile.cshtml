@@ -42,6 +42,10 @@
 <hr />
 
 <div>
-    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" }) |
+
+    @*Since I couldn't use IEnumerable without affecting all the functions above, for the Edit button I
+    just had to using Model.Id instead of putting in a foreach loop and fetch out the data from there.*@
+    @Html.ActionLink("Edit Profile", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" })
 </div>
 
